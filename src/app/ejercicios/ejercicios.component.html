@@ -1,0 +1,36 @@
+<h3>{{ ejercicio.name }}</h3>
+<h3>{{ ejercicio.lastname }}</h3>
+<h4><span>id: </span>{{ ejercicio.id }}</h4>
+<p>{{ ejercicio.currency | currency: "S/" }}</p>
+<div>
+  <label for=""
+    >Nombre
+    <input
+      type="text"
+      [(ngModel)]="ejercicio.name"
+      placeholder="Escribe un nombre"
+      autofocus
+    />
+    <input
+      type="text"
+      [(ngModel)]="ejercicio.lastname"
+      placeholder="Escribe un apellido"
+    />
+  </label>
+</div>
+<div>
+  <h1>{{ ejercicio.title | uppercase }}</h1>
+
+  <ul class="ejercicios">
+    <li
+      *ngFor="let ejercicio of ejercicios"
+      (click)="onSelectEjercicio(ejercicio)"
+      [class.selected]="ejercicio === ejercicioSeleccionado"
+    >
+      <span class="ejercicio">{{ ejercicio.id }} </span>{{ ejercicio.name }}
+    </li>
+  </ul>
+</div>
+<app-ejercicio-detalle
+  [ejercicio]="ejercicioSeleccionado"
+></app-ejercicio-detalle>

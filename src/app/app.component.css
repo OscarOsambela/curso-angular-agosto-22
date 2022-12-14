@@ -1,0 +1,10 @@
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 30px;
+}
+nav a{
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
+}
